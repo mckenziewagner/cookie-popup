@@ -56,11 +56,13 @@ function eraseCookie(name) {
 
 function cookieConsent() {
   if (!getCookie('COOKIEPOPUP_Dismiss')) {
-    document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer" style="background-color: ' + COOKIEPOPUP_bgColor + ';">'+
-                                 '<div class="cookieTitle"><a>' + COOKIEPOPUP_title + '</a></div>'+
-                                 '<div class="cookieDesc"><p>' + COOKIEPOPUP_desc + ' ' + COOKIEPOPUP_link + '</p></div>'+
-                                 '<div class="cookieButton"><a onClick="COOKIEPOPUP_Dismiss();" style="background-color: ' + COOKIEPOPUP_buttonColor + ';">' + COOKIEPOPUP_button + '</a></div>'+
-                               '</div>';
+    var container = document.createElement('div');
+    container.innerHTML = '<div class="cookieConsentContainer" id="cookieConsentContainer" style="background-color: ' + COOKIEPOPUP_bgColor + ';">'+
+                            '<div class="cookieTitle"><a>' + COOKIEPOPUP_title + '</a></div>'+
+                            '<div class="cookieDesc"><p>' + COOKIEPOPUP_desc + ' ' + COOKIEPOPUP_link + '</p></div>'+
+                            '<div class="cookieButton"><a onClick="COOKIEPOPUP_Dismiss();" style="background-color: ' + COOKIEPOPUP_buttonColor + ';">' + COOKIEPOPUP_button + '</a></div>'+
+                          '</div>';
+    document.body.appendChild(container);
 	  pureFadeIn("cookieConsentContainer");
   }
 }
