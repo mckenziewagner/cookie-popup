@@ -59,8 +59,8 @@ function cookieConsent() {
   if (!getCookie('COOKIEPOPUP_Dismiss')) {
     var container = document.createElement('div');
     container.innerHTML = '<div class="cookieConsentContainer" id="cookieConsentContainer" style="background-color: ' + COOKIEPOPUP_bgColor + ';">'+
-                            '<div class="cookieTitle" style="color: ' + COOKIEPOPUP_textColor + ';"><a>' + COOKIEPOPUP_title + '</a></div>'+
-                            '<div class="cookieDesc" style="color: ' + COOKIEPOPUP_textColor + ';"><p>' + COOKIEPOPUP_desc + ' ' + COOKIEPOPUP_link + '</p></div>'+
+                            '<div class="cookieTitle"><a style="color: ' + COOKIEPOPUP_textColor + ';">' + COOKIEPOPUP_title + '</a></div>'+
+                            '<div class="cookieDesc"><p style="color: ' + COOKIEPOPUP_textColor + ';">' + COOKIEPOPUP_desc + ' ' + COOKIEPOPUP_link + '</p></div>'+
                             '<div class="cookieButton"><a onClick="COOKIEPOPUP_Dismiss();" style="background-color: ' + COOKIEPOPUP_buttonColor + ';">' + COOKIEPOPUP_button + '</a></div>'+
                           '</div>';
     document.body.appendChild(container);
