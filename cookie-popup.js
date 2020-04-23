@@ -3,6 +3,7 @@ var COOKIEPOPUP_desc = "By using this website, you automatically accept the use 
 var COOKIEPOPUP_link = '<a href="cookie-policy.html" target="_blank">See privacy policy.</a>'; // Cookiepolicy link
 var COOKIEPOPUP_button = "Understood"; // Button text
 var COOKIEPOPUP_bgColor = "#232323";
+var COOKIEPOPUP_textColor = "#FFFFFF";
 var COOKIEPOPUP_buttonColor = "#3E9B67";
 
 function pureFadeIn(elem, display){
@@ -58,8 +59,8 @@ function cookieConsent() {
   if (!getCookie('COOKIEPOPUP_Dismiss')) {
     var container = document.createElement('div');
     container.innerHTML = '<div class="cookieConsentContainer" id="cookieConsentContainer" style="background-color: ' + COOKIEPOPUP_bgColor + ';">'+
-                            '<div class="cookieTitle"><a>' + COOKIEPOPUP_title + '</a></div>'+
-                            '<div class="cookieDesc"><p>' + COOKIEPOPUP_desc + ' ' + COOKIEPOPUP_link + '</p></div>'+
+                            '<div class="cookieTitle" style="color: ' + COOKIEPOPUP_textColor + ';"><a>' + COOKIEPOPUP_title + '</a></div>'+
+                            '<div class="cookieDesc" style="color: ' + COOKIEPOPUP_textColor + ';"><p>' + COOKIEPOPUP_desc + ' ' + COOKIEPOPUP_link + '</p></div>'+
                             '<div class="cookieButton"><a onClick="COOKIEPOPUP_Dismiss();" style="background-color: ' + COOKIEPOPUP_buttonColor + ';">' + COOKIEPOPUP_button + '</a></div>'+
                           '</div>';
     document.body.appendChild(container);
